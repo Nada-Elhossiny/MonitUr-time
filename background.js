@@ -15,18 +15,6 @@ async function getCurrentTab() {
 chrome.runtime.onInstalled.addListener(async () => {
   console.log(await getCurrentTab());
 });
-=======
-chrome.tabs.query(
-  {
-    active: true,
-    currentWindow: true,
-  },
-  function (tabs) {
-    var tabURL = tabs[0].url;
-    console.log(tabURL);
-  }
-);
->>>>>>> parent of 3b44482 (testing getCurrentTab????)
 
 
 function onGot(item) {
