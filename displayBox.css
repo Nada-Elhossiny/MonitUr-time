@@ -10,3 +10,12 @@ button {
 button.current {
     box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
+
+div {
+    height: 200px;
+    width: 180px;
+    outline: none;
+    margin: 10px;
+    border: none;
+    border-radius: 2px
+}
