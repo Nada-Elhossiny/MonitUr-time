@@ -31,12 +31,6 @@ function view() {
 }
 
 
-
-
 function clear() {
-  return new Promise((resolve) => {
-      chrome.storage.local.get(data => {
-          chrome.storage.local.remove(Object.keys(data), resolve)
-      })
-  })
+  browser.storage.local.clear()
 }
