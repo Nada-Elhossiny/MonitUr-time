@@ -7,13 +7,13 @@ chrome.runtime.onInstalled.addListener(() => {
 
 
 async function getCurrentTab() {
-  let queryOptions = { active: true, currentWindow: true };
+  let queryOptions = { active: true, lastFocusedWindow: true };
   let [tab] = await chrome.tabs.query(queryOptions);
-  return tab[0].url;
+  return tab[0].url;;
 }
 
 chrome.runtime.onInstalled.addListener(async () => {
-  console.log(await getCurrentTab());
+  console.log(getCurrentTab());
 });
 
 
