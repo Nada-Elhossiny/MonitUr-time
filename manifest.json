@@ -7,15 +7,7 @@
     "service_worker": "background.js"
   },
   "options_page": "options.html",
-  "permissions": [
-    "storage",
-    "activeTab",
-    "scripting",
-    "tabs",
-    "notifications",
-    "unlimitedStorage",
-    "webNavigation"
-  ],
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "webNavigation"],
   "action": {
     "default_title": "MonitUR Time",
     "default_popup": "popup.html",

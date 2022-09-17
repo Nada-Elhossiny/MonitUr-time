@@ -12,25 +12,26 @@ chrome.tabs.query(
   },
   function (tabs) {
     var tabURL = tabs[0].url;
-    console.log(tabURL);
+    chrome.storage.local.set({ urlList: tabURL }, () => {
+      console.log('the url is: ' + urlList);
+    });
+    console.log('urlList');
   }
 );
 
+// function onGot(item) {
+//   console.log(item);
+// }
 
-function onGot(item) {
-  console.log(item);
-}
+// function onError(error) {
+//   console.log(`Error: ${error}`);
+// }
 
-function onError(error) {
-  console.log(`Error: ${error}`);
-}
+// function view() {
+//   browser.storage.local.get();
+//   gettingItem.then(onGot, onError);
+// }
 
-function view() {
-  browser.storage.local.get();
-  gettingItem.then(onGot, onError);
-}
-
-
-function clear() {
-  browser.storage.local.clear()
-}
+// function clear() {
+//   browser.storage.local.clear()
+// }
