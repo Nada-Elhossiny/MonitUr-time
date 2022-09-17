@@ -5,6 +5,7 @@ chrome.runtime.onInstalled.addListener(() => {
   //console.log('Default background colour set to %cgreen', 'color: ${colour}');
 });
 
+<<<<<<< HEAD
 async function getCurrentTab() {
   let queryOptions = { active: true, currentWindow: true };
   let [tab] = await chrome.tabs.query(queryOptions);
@@ -15,6 +16,18 @@ chrome.runtime.onInstalled.addListener(async () => {
   console.log("test");
   console.log(getCurrentTab());
 });
+=======
+chrome.tabs.query(
+  {
+    active: true,
+    currentWindow: true,
+  },
+  function (tabs) {
+    var tabURL = tabs[0].url;
+    console.log(tabURL);
+  }
+);
+>>>>>>> parent of 3b44482 (testing getCurrentTab????)
 
 
 function onGot(item) {
@@ -32,5 +45,5 @@ function view() {
 
 
 function clear() {
-  browser.storage.clear()
+  browser.storage.local.clear()
 }
