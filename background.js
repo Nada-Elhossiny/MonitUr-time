@@ -13,8 +13,7 @@ async function getCurrentTab() {
 }
 
 chrome.runtime.onInstalled.addListener(async () => {
-  console.log("test");
-  console.log(getCurrentTab());
+  console.log(await getCurrentTab());
 });
 =======
 chrome.tabs.query(
