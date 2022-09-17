@@ -7,8 +7,16 @@
     "service_worker": "background.js"
   },
   "options_page": "options.html",
-  "permissions": ["storage", "activeTab", "scripting", "tabs", "notifications"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "notifications",
+    "webNavigation"
+  ],
   "action": {
+    "default_title": "MonitUR Time",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "/images/time16.png",
