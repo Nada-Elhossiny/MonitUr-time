@@ -11,7 +11,7 @@ button.current {
   box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
 
-webpage {
+displayBox {
   height: 100px;
   width: 80px;
   outline: none;
@@ -20,6 +20,6 @@ webpage {
   border-radius: 2px
 }
 
-webpage.current {
+displayBox.current {
   box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
