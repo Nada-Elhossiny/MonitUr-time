@@ -12,9 +12,11 @@ async function getCurrentTab() {
   return tab[0].url;;
 }
 
-chrome.runtime.onInstalled.addListener(async () => {
-  console.log(getCurrentTab());
-});
+chrome.tabs.onUpdated.addListener(async function () {
+  console.log("TAB UPDATED")
+  let url = await getTab()
+  console.log(url)
+})
 
 
 function onGot(item) {
