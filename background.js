@@ -5,16 +5,15 @@ chrome.runtime.onInstalled.addListener(() => {
   //console.log('Default background colour set to %cgreen', 'color: ${colour}');
 });
 
-chrome.tabs.query(
-  {
-    active: true,
-    currentWindow: true,
-  },
-  function (tabs) {
-    var tabURL = tabs[0].url;
-    console.log(tabURL);
-  }
-);
+async function getCurrentTab() {
+  let queryOptions = { active: true, currentWindow: true };
+  let [tab] = await chrome.tabs.query(queryOptions);
+  return tab;
+}
+
+chrome.runtime.onInstalled.addListener(async () => {
+  console.log(await getCurrentTab());
+});
 
 
 function onGot(item) {
@@ -32,5 +31,5 @@ function view() {
 
 
 function clear() {
-  browser.storage.local.clear()
+  browser.storage.clear()
 }
