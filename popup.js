@@ -1,25 +1,20 @@
-/*
-let changeColor = document.getElementById('changeColor');
-
-chrome.storage.sync.get('color', ({ color }) => {
-  changeColor.style.backgroundColor = color;
-});
-
-// When the button is clicked, inject setPageBackgroundColor into current page
-changeColor.addEventListener("click", async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    func: setPageBackgroundColor,
-  });
-});
-
-// The body of this function will be executed as a content script inside the
-// current page
-function setPageBackgroundColor() {
-  chrome.storage.sync.get("color", ({ color }) => {
-    document.body.style.backgroundColor = color;
-  });
+function getToday() {
+  return new Date().setHours(0, 0, 0, 0)
 }
-*/
+
+function getStartOfWeek() {
+  const now = new Date();
+  const day = now.getDay();
+  const diff = now.getDate() - day + (day === 0 ? -6 : 1); 
+  return new Date(now.setDate(diff)).setHours(0, 0, 0, 0);
+}
+
+function getStartOfPreviousWeek() {
+  const startOfWeek = new Date(getStartOfWeek())
+  return startOfWeek.setDate(startOfWeek.getDate() - 7)
+}
+
+function getEndOfPreviousWeek() {
+  const startOfWeek = new Date(getStartOfWeek())
+  return startOfWeek.setDate(startOfWeek.getDate() - 1)
+}
