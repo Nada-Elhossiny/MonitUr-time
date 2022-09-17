@@ -12,24 +12,24 @@ chrome.tabs.query(
   },
   function (tabs) {
     var tabURL = tabs[0].url;
-    chrome.storage.local.set({ urlList: tabURL }, () => {
-      console.log('the url is: ' + urlList);
-    });
-    console.log('urlList');
+    console.log(tabURL);
+    var today = new Date();
+    var time = today.getHours() + ':' + today.getMinutes();
+    console.log(time);
   }
 );
 
-async function getCurrentTab() {
-  let queryOptions = { active: true, lastFocusedWindow: true };
-  let [tab] = await chrome.tabs.query(queryOptions);
-  return tab[0].url;
-}
+// async function getCurrentTab() {
+//   let queryOptions = { active: true, lastFocusedWindow: true };
+//   let [tab] = await chrome.tabs.query(queryOptions);
+//   return tab[0].url;
+// }
 
-chrome.tabs.onUpdated.addListener(async function () {
-  console.log('TAB UPDATED');
-  let url = await getTab();
-  console.log(url);
-});
+// chrome.tabs.onUpdated.addListener(async function () {
+//   console.log('TAB UPDATED');
+//   let url = await getTab();
+//   console.log(url);
+// });
 
 // function onGot(item) {
 //   console.log(item);
