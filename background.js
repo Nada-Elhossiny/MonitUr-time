@@ -17,13 +17,20 @@ chrome.tabs.query(
 );
 
 
+function onGot(item) {
+  console.log(item);
+}
 
+function onError(error) {
+  console.log(`Error: ${error}`);
+}
+
+function view() {
+  browser.storage.local.get();
+  gettingItem.then(onGot, onError);
+}
 
 
 function clear() {
-  return new Promise((resolve) => {
-      chrome.storage.local.get(data => {
-          chrome.storage.local.remove(Object.keys(data), resolve)
-      })
-  })
+  browser.storage.local.clear()
 }

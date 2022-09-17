@@ -13,6 +13,7 @@
     "scripting",
     "tabs",
     "notifications",
+    "unlimitedStorage",
     "webNavigation"
   ],
   "action": {
