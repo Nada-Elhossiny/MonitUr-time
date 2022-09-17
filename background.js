@@ -17,6 +17,19 @@ chrome.tabs.query(
 );
 
 
+function onGot(item) {
+  console.log(item);
+}
+
+function onError(error) {
+  console.log(`Error: ${error}`);
+}
+
+function view() {
+  browser.storage.local.get();
+  gettingItem.then(onGot, onError);
+}
+
 
 
 
