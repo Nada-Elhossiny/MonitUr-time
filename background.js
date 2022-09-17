@@ -9,11 +9,11 @@ chrome.runtime.onInstalled.addListener(() => {
 async function getCurrentTab() {
   let queryOptions = { active: true, currentWindow: true };
   let [tab] = await chrome.tabs.query(queryOptions);
-  return tab;
+  return tab[0].url;
 }
 
 chrome.runtime.onInstalled.addListener(async () => {
-  console.log(await getCurrentTab()[0].url);
+  console.log(await getCurrentTab());
 });
 
 
