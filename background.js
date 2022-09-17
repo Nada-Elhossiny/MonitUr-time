@@ -15,3 +15,15 @@ chrome.tabs.query(
     console.log(tabURL);
   }
 );
+
+
+
+
+
+function clear() {
+  return new Promise((resolve) => {
+      chrome.storage.local.get(data => {
+          chrome.storage.local.remove(Object.keys(data), resolve)
+      })
+  })
+}
