@@ -1,3 +1,21 @@
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+const firebaseConfig = {
+  // ...
+  // The value of `databaseURL` depends on the location of the database
+  databaseURL: "https://monitur-time-default-rtdb.firebaseio.com/",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
+
+
+
 let colour = '#3aa757';
 
 chrome.runtime.onInstalled.addListener(() => {
@@ -16,6 +34,7 @@ chrome.tabs.query(
     var today = new Date();
     var time = today.getHours() + ':' + today.getMinutes();
     console.log(time);
+    console.log(today);
   }
 );
 
