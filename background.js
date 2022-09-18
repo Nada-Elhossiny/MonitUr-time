@@ -1,5 +1,6 @@
 let websiteNames = ["Youtube"];
 let timeSpent = [0];
+let trueTime = new Date();
 
 function delay(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -45,7 +46,6 @@ function addToArray(websiteName) {
           console.log(i);
           timeSpent(i)++;
         } else {
-          console.log("Test");
           websiteNames.push(websiteName);
           timeSpent.push(1);
         }
@@ -76,11 +76,13 @@ function getCurrentDomain() {
 
       
 
-      console.log(siteToOrg(tabURL)); // PRINTS SITE
+      console.log(Date() + ": " + siteToOrg(tabURL)); // PRINTS SITE
       
       var websiteName = siteToOrg(tabURL); 
 
-      addToArray(websiteName);
+      // addToArray(websiteName);
+
+      
 
 
     }
