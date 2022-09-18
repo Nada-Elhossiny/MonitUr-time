@@ -13,3 +13,9 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
+
+function changePopup(){
+  chrome.browserAction.setPopup({
+     popup:"second_page.html"
+  });
+}

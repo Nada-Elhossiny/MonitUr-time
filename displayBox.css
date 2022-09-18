@@ -25,8 +25,8 @@ button.current {
 }
 
 .category1 {
-    height: 60px;
-    width: 280px;
+    height: 80px;
+    width: 345px;
     outline: 2px;
     margin: auto;
     background-color: #FA6473;
@@ -37,8 +37,8 @@ button.current {
 }
 
 .category2 {
-    height: 60px;
-    width: 280px;
+    height: 80px;
+    width: 345px;
     outline: none;
     margin: auto;
     background-color: #FFC84B;
@@ -49,8 +49,8 @@ button.current {
 }
 
 .category3 {
-    height: 60px;
-    width: 280px;
+    height: 80px;
+    width: 345px;
     outline: none;
     margin: auto;
     background-color: #00C8A5;
@@ -61,8 +61,8 @@ button.current {
 }
 
 .category4 {
-    height: 60px;
-    width: 280px;
+    height: 80px;
+    width: 345px;
     outline: none;
     margin: auto;
     background-color: #6482FF;
