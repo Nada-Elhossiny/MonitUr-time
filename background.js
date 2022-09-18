@@ -1,7 +1,15 @@
-let company = new Array(1);
+let websiteNames = ["Youtube"];
+let timeSpent = [0];
 
 function delay(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+function printArray() {
+  length = websiteNames.length;
+  for (i = 0; i < length; i++) {
+    console.log(websiteNames(i) + ": " + timeSpent(i));
+  }
 }
 
 function siteToOrg(url) {
@@ -30,6 +38,25 @@ function siteToOrg(url) {
   return url;
 }
 
+function addToArray(websiteName) {
+  length = websiteNames.length; 
+      for (i = 0; i < length; i++) {                // Loop to add percentage to global array
+        if (websiteName == websiteNames[i]) {
+          console.log(i);
+          timeSpent(i)++;
+        } else {
+          console.log("Test");
+          websiteNames.push(websiteName);
+          timeSpent.push(1);
+        }
+      }
+      
+      console.log(websiteNames.length);
+}
+
+
+
+
 let colour = '#3aa757';
 
 chrome.runtime.onInstalled.addListener(() => {
@@ -47,9 +74,15 @@ function getCurrentDomain() {
     function (tabs) {
       var tabURL = tabs[0].url;
 
-      console.log(siteToOrg(tabURL)); // PRINTS SITE
+      
 
-      company.push(siteToOrg(tabURL)); // Adds to Array
+      console.log(siteToOrg(tabURL)); // PRINTS SITE
+      
+      var websiteName = siteToOrg(tabURL); 
+
+      addToArray(websiteName);
+
+
     }
   );
 
@@ -58,7 +91,7 @@ function getCurrentDomain() {
 
 async function setCurrentDomain() {
   // chrome.tabs.onActivated.addListener(() => {
-  console.log('\n');
+  // console.log('\n');
   await new Promise((resolve) => setTimeout(resolve, 1000)); // 1000 = 1 second
   getCurrentDomain();
   // });
