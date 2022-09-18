@@ -1,14 +1,19 @@
+let company = new Array(1);
+
 function delay(time) {
-  return new Promise(resolve => setTimeout(resolve, time));
+  return new Promise((resolve) => setTimeout(resolve, time));
 }
 
 function siteToOrg(url) {
-  var url = url.replace("http://", "").replace("https://", "").replace("www.", "");
+  var url = url
+    .replace('http://', '')
+    .replace('https://', '')
+    .replace('www.', '');
   url = url.charAt(0).toUpperCase() + url.substring(1);
 
   var i = 0;
   while (true) {
-    if (url.slice(i, i + 1) == "/") {
+    if (url.slice(i, i + 1) == '/') {
       url = url.substring(0, i);
       break;
     }
@@ -23,10 +28,7 @@ function siteToOrg(url) {
   }
 
   return url;
-
 }
-
-
 
 let colour = '#3aa757';
 
@@ -36,10 +38,7 @@ chrome.runtime.onInstalled.addListener(() => {
   getCurrentDomain();
 });
 
-
-
 function getCurrentDomain() {
-
   chrome.tabs.query(
     {
       active: true,
@@ -47,13 +46,10 @@ function getCurrentDomain() {
     },
     function (tabs) {
       var tabURL = tabs[0].url;
-      console.log(tabURL);
-      
-      
-      console.log(siteToOrg(tabURL));            // PRINTS SITE
 
-      var today = new Date();
-      console.log(today);
+      console.log(siteToOrg(tabURL)); // PRINTS SITE
+
+      company.push(siteToOrg(tabURL)); // Adds to Array
     }
   );
 
@@ -61,13 +57,9 @@ function getCurrentDomain() {
 }
 
 async function setCurrentDomain() {
-
   // chrome.tabs.onActivated.addListener(() => {
-  console.log("\n");
-  await new Promise(resolve => setTimeout(resolve, 1000)); // 1000 = 1 second
+  console.log('\n');
+  await new Promise((resolve) => setTimeout(resolve, 1000)); // 1000 = 1 second
   getCurrentDomain();
   // });
-
 }
-
-
