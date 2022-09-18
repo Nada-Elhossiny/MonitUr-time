@@ -71,3 +71,27 @@ button.current {
 .category4:hover {
     background-color: #0D3DFF;
 }
+
+.piechart {
+    margin-top: 300px;
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border:15px;
+    border-radius: 50%;
+    margin:auto;
+    margin-left: 30px;
+    background-image: conic-gradient(
+        #FA6473 95deg, 
+        #FFC84B 0 145deg,
+        #00C8A5 0 300deg, 
+        #6482FF 0);
+}
+
+body,
+.piechart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
