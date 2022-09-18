@@ -15,8 +15,8 @@ We used HTML for the extension's popup, and JavaScript to interact with our Chro
 ## Challenges we ran into
 The main challenge we ran into was understanding how to interact with our chrome extension using the manifest.json file, and how to implement the functionality we wanted for our project. Additionally, it was our first time building a chrome extension, and we underestimated how long it would take us to understand the components of development and implementation. 
 
-# Accomplishments and Takeaways that we are proud of
+## Accomplishments and Takeaways that we are proud of
 We are proud that we were able to submit a working product in under 36 hours. We learned a lot about chrome extensions, Javascript and HTML. 
 
-#What's next for MonitUR Time
+## What's next for MonitUR Time
 We would like to develop the front-end UI as well as our data storing method. Additionally, we want to analyze time trends over the week/month/year and provide more detailed insights. We would like to explore what times of day we visit different websites to get a better idea of our habits.
